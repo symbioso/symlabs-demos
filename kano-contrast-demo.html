@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kano contrast — what the customer really ranks</title>
+<style>
+  :root{
+    --bg:#faf9f6; --card:#ffffff; --line:#e6e3db; --line2:#cfcbc0;
+    --ink:#1f1e1b; --ink2:#57544d; --ink3:#8a877f; --accent:#185fa5; --accentbg:#e6f1fb;
+    --radius:10px;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1a1a18; --card:#242320; --line:#38362f; --line2:#4a473f;
+      --ink:#f2f0ea; --ink2:#b8b5ac; --ink3:#8a877f; --accent:#85b7eb; --accentbg:#0c2740; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;padding:2rem 1rem}
+  .wrap{max-width:640px;margin:0 auto}
+  h1{font-size:22px;font-weight:500;margin:0 0 6px}
+  .sub{font-size:15px;color:var(--ink2);margin:0 0 1.75rem}
+  .step{font-size:13px;color:var(--ink3);margin-bottom:8px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.25rem;margin-bottom:1.5rem}
+  .attr{font-size:15px;font-weight:500;margin-bottom:12px;line-height:1.5}
+  label{display:block;font-size:13px;color:var(--ink2);margin-bottom:6px}
+  select{width:100%;height:38px;font-size:15px;font-family:inherit;color:var(--ink);
+    background:var(--card);border:1px solid var(--line2);border-radius:var(--radius);padding:0 10px;margin-bottom:12px}
+  select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accentbg)}
+  .verdict{display:none;margin-top:6px;padding-top:12px;border-top:1px solid var(--line)}
+  .vname{font-size:18px;font-weight:500}
+  .vline{font-size:14px;color:var(--ink2)}
+  .compare{display:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.25rem}
+  .clabel{font-size:13px;color:var(--ink3);margin-bottom:12px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:1rem}
+  .gh{font-size:13px;color:var(--ink2);margin-bottom:6px}
+  .gc{font-size:14px;font-weight:500;margin-top:4px}
+  .takeaway{font-size:15px;color:var(--ink);line-height:1.6}
+  .hint{font-size:13px;color:var(--ink3);text-align:center;padding:.5rem 0}
+  svg{width:100%;height:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div style="font-size:15px;font-weight:500;color:var(--accent);margin-bottom:2px;">SymLabs</div>
+  <div style="font-size:13px;color:var(--ink3);margin-bottom:1.25rem;">Customer Needs study · Voice of the Customer</div>
+  <h1>What the customer really ranks</h1>
+  <p class="sub">Answer two questions about each of two things SymLabs could do. The pair reveals how you truly value it, and which overlooked pain is actually the critical one.</p>
+
+  <div class="step">step 1 of 2 — a convenience</div>
+  <div class="card">
+    <div class="attr">SymLabs carries every detail you gave during sales into installation, so no one on the delivery side re-asks.</div>
+    <label>if it <b>does</b> carry everything over</label>
+    <select class="fn" data-b="A"><option value="0" selected disabled>choose an answer</option><option value="1">I like it</option><option value="2">I expect it</option><option value="3">I'm neutral</option><option value="4">I can tolerate it</option><option value="5">I dislike it</option></select>
+    <label>if it <b>doesn't</b> (they re-ask what you already told sales)</label>
+    <select class="dy" data-b="A"><option value="0" selected disabled>choose an answer</option><option value="1">I like it</option><option value="2">I expect it</option><option value="3">I'm neutral</option><option value="4">I can tolerate it</option><option value="5">I dislike it</option></select>
+    <div class="verdict" id="vA"></div>
+  </div>
+
+  <div class="step">step 2 of 2 — the moment you sign with SymLabs</div>
+  <div class="card">
+    <div class="attr">The moment you sign with SymLabs, everything you agreed is captured and set in motion, with nothing left for someone to reconstruct later.</div>
+    <label>if signing <b>does</b> lock it all in and start the momentum</label>
+    <select class="fn" data-b="B"><option value="0" selected disabled>choose an answer</option><option value="1">I like it</option><option value="2">I expect it</option><option value="3">I'm neutral</option><option value="4">I can tolerate it</option><option value="5">I dislike it</option></select>
+    <label>if it <b>doesn't</b> (things you agreed weren't captured, nothing moves)</label>
+    <select class="dy" data-b="B"><option value="0" selected disabled>choose an answer</option><option value="1">I like it</option><option value="2">I expect it</option><option value="3">I'm neutral</option><option value="4">I can tolerate it</option><option value="5">I dislike it</option></select>
+    <div class="verdict" id="vB"></div>
+  </div>
+
+  <div class="compare" id="compare">
+    <div class="clabel">what your answers ranked</div>
+    <div class="grid">
+      <div><div class="gh">the convenience</div><svg id="mA" viewBox="0 0 230 188" role="img" aria-label="Kano diagram for the convenience attribute"></svg><div class="gc" id="lA"></div></div>
+      <div><div class="gh">the signing moment</div><svg id="mB" viewBox="0 0 230 188" role="img" aria-label="Kano diagram for the signing attribute"></svg><div class="gc" id="lB"></div></div>
+    </div>
+    <div class="takeaway" id="takeaway"></div>
+  </div>
+
+  <div class="hint" id="hint">answer all four to see the contrast</div>
+</div>
+
+<script>
+(function(){
+  var K=[["Q","E","E","E","P"],["R","I","I","I","M"],["R","I","I","I","M"],["R","I","I","I","M"],["R","R","R","R","Q"]];
+  var NAME={M:"Must-be",P:"Performance",E:"Excitement",I:"Indifferent",R:"Reverse",Q:"Questionable"};
+  var LINE={M:"invisible when honored, infuriating when missing.",P:"the better it's done, the happier you are.",E:"a delighter; its absence wouldn't bother you.",I:"you can take it or leave it.",R:"you'd prefer the opposite.",Q:"your two answers conflict; worth re-asking."};
+  var FAM={P:"M42,160 L198,40",R:"M42,40 L198,160",E:"M42,106 Q140,98 198,40",M:"M42,160 Q118,106 198,88",I:"M42,100 L198,100"};
+  var st={A:{fn:0,dy:0,cat:null},B:{fn:0,dy:0,cat:null}};
+  function cvar(v,f){var x=getComputedStyle(document.documentElement).getPropertyValue(v);return x?x.trim():f;}
+  function mini(id,cat){
+    var a=cvar('--accent','#185fa5'),faint=cvar('--line','#ddd'),ax=cvar('--ink3','#888');
+    var s='';
+    s+='<line x1="26" y1="100" x2="204" y2="100" stroke="'+ax+'" stroke-width="1.2"/>';
+    s+='<line x1="118" y1="28" x2="118" y2="172" stroke="'+ax+'" stroke-width="1.2"/>';
+    s+='<path d="M204,100 l-7,-3.5 v7 z" fill="'+ax+'"/>';
+    s+='<path d="M118,28 l-3.5,7 h7 z" fill="'+ax+'"/>';
+    for(var k in FAM){ s+='<path d="'+FAM[k]+'" fill="none" stroke="'+faint+'" stroke-width="1.5"/>'; }
+    if(cat==='Q'){ s+='<path d="M42,100 L198,100" fill="none" stroke="'+a+'" stroke-width="2.5" stroke-dasharray="5 5"/>'; }
+    else { s+='<path d="'+FAM[cat]+'" fill="none" stroke="'+a+'" stroke-width="3"/>'; }
+    s+='<text x="122" y="36" font-size="11" fill="'+ax+'">satisfied</text>';
+    s+='<text x="122" y="170" font-size="11" fill="'+ax+'">dissatisfied</text>';
+    s+='<text x="4" y="114" font-size="11" fill="'+ax+'">not fulfilled</text>';
+    s+='<text x="158" y="114" font-size="11" fill="'+ax+'">fulfilled</text>';
+    document.getElementById(id).innerHTML=s;
+  }
+  function verdict(b){
+    var s=st[b];if(!s.fn||!s.dy)return;
+    s.cat=K[s.fn-1][s.dy-1];
+    var el=document.getElementById('v'+b);
+    el.innerHTML='<span class="vname">'+NAME[s.cat]+'</span> <span class="vline">— '+LINE[s.cat]+'</span>';
+    el.style.display='block';
+    if(st.A.cat&&st.B.cat)compare();
+  }
+  function compare(){
+    document.getElementById('hint').style.display='none';
+    mini('mA',st.A.cat);mini('mB',st.B.cat);
+    document.getElementById('lA').textContent=NAME[st.A.cat];
+    document.getElementById('lB').textContent=NAME[st.B.cat];
+    var t;
+    if(st.B.cat==='M'&&st.A.cat!=='M'){
+      t='Same you, four honest answers, two different curves. For SymLabs, the signing moment is the one you’d never think to praise, and the one whose absence cuts deepest. The convenience you can take or leave. You just ranked the pains, and the critical one was the quiet one.';
+    } else {
+      t='Same you, four honest answers. The two curves aren’t the same shape, so the two pains don’t carry the same weight. The customer’s own answers rank them, not SymLabs’ hunch.';
+    }
+    document.getElementById('takeaway').textContent=t;
+    document.getElementById('compare').style.display='block';
+  }
+  document.querySelectorAll('select').forEach(function(sel){
+    sel.addEventListener('change',function(){
+      var b=sel.getAttribute('data-b'),k=sel.classList.contains('fn')?'fn':'dy';
+      st[b][k]=+sel.value;verdict(b);
+    });
+  });
+})();
+</script>
+</body>
+</html>
