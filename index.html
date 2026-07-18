@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SymLabs demos</title>
+<style>
+  :root{
+    --bg:#faf9f6; --card:#ffffff; --line:#e6e3db; --line2:#cfcbc0;
+    --ink:#1f1e1b; --ink2:#57544d; --ink3:#8a877f; --accent:#185fa5; --accentbg:#e6f1fb;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#1a1a18; --card:#242320; --line:#38362f; --line2:#4a473f;
+      --ink:#f2f0ea; --ink2:#b8b5ac; --ink3:#8a877f; --accent:#85b7eb; --accentbg:#0c2740; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;
+    -webkit-font-smoothing:antialiased;padding:2.5rem 1rem}
+  .wrap{max-width:640px;margin:0 auto}
+  .brand{font-size:15px;font-weight:500;color:var(--accent);margin-bottom:2px}
+  .tag{font-size:13px;color:var(--ink3);margin-bottom:2rem}
+  h1{font-size:22px;font-weight:500;margin:0 0 6px}
+  .sub{font-size:15px;color:var(--ink2);margin:0 0 2rem}
+  .grid{display:flex;flex-direction:column;gap:12px}
+  a.card{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;
+    text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:1rem 1.25rem;transition:border-color .15s ease,background .15s ease}
+  a.card:hover{border-color:var(--accent);background:var(--accentbg)}
+  .c-title{font-size:16px;font-weight:500;color:var(--ink);margin:0 0 4px}
+  .c-desc{font-size:14px;color:var(--ink2);margin:0}
+  .arrow{color:var(--accent);font-size:20px;line-height:1.4;flex:none}
+  footer{margin-top:2.5rem;font-size:13px;color:var(--ink3)}
+  footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand">SymLabs</div>
+  <div class="tag">Customer Needs studies · Voice of the Customer</div>
+
+  <h1>Interactive demos</h1>
+  <p class="sub">Small, self-contained tools that let you feel a method rather than read about it. Open one and answer for yourself.</p>
+
+  <div class="grid">
+
+    <a class="card" href="kano-contrast-demo.html">
+      <span>
+        <p class="c-title">Kano contrast — what the customer really ranks</p>
+        <p class="c-desc">Two questions, two attributes, and your own answers rank the pains. See why the quiet expectation can be the critical one.</p>
+      </span>
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </a>
+
+    <!-- To add a demo: copy the block above, change the href to the new file, and update the title and description. -->
+
+  </div>
+
+  <footer>demos.symlabs.org · part of <a href="https://symbiosociety.com">SymbioSociety</a></footer>
+</div>
+</body>
+</html>
