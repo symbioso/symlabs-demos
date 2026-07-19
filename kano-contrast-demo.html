@@ -48,7 +48,7 @@
   <h1>What the customer really ranks</h1>
   <p class="sub">Answer two questions about each of two things SymLabs could do. The pair reveals how you truly value it, and which overlooked pain is actually the critical one.</p>
 
-  <div class="step">step 1 of 2 — a convenience</div>
+  <div class="step">step 1 of 2 — getting started (onboarding)</div>
   <div class="card">
     <div class="attr">SymLabs carries every detail you gave during sales into installation, so no one on the delivery side re-asks.</div>
     <label>if it <b>does</b> carry everything over</label>
@@ -58,12 +58,12 @@
     <div class="verdict" id="vA"></div>
   </div>
 
-  <div class="step">step 2 of 2 — the moment you sign with SymLabs</div>
+  <div class="step">step 2 of 2 — what actually shows up after you sign</div>
   <div class="card">
-    <div class="attr">The moment you sign with SymLabs, everything you agreed is captured and set in motion, with nothing left for someone to reconstruct later.</div>
-    <label>if signing <b>does</b> lock it all in and start the momentum</label>
+    <div class="attr">After you sign with SymLabs, what you agreed to is what actually shows up: delivered when promised, without you having to explain it all over again.</div>
+    <label>if what you agreed to is exactly what gets <b>delivered</b>, on time</label>
     <select class="fn" data-b="B"><option value="0" selected disabled>choose an answer</option><option value="1">I like it</option><option value="2">I expect it</option><option value="3">I'm neutral</option><option value="4">I can tolerate it</option><option value="5">I dislike it</option></select>
-    <label>if it <b>doesn't</b> (things you agreed weren't captured, nothing moves)</label>
+    <label>if what shows up <b>doesn't</b> match what you agreed, or it drags on</label>
     <select class="dy" data-b="B"><option value="0" selected disabled>choose an answer</option><option value="1">I like it</option><option value="2">I expect it</option><option value="3">I'm neutral</option><option value="4">I can tolerate it</option><option value="5">I dislike it</option></select>
     <div class="verdict" id="vB"></div>
   </div>
@@ -71,8 +71,8 @@
   <div class="compare" id="compare">
     <div class="clabel">what your answers ranked</div>
     <div class="grid">
-      <div><div class="gh">the convenience</div><svg id="mA" viewBox="0 0 230 188" role="img" aria-label="Kano diagram for the convenience attribute"></svg><div class="gc" id="lA"></div></div>
-      <div><div class="gh">the signing moment</div><svg id="mB" viewBox="0 0 230 188" role="img" aria-label="Kano diagram for the signing attribute"></svg><div class="gc" id="lB"></div></div>
+      <div><div class="gh">onboarding</div><svg id="mA" viewBox="0 0 230 188" role="img" aria-label="Kano diagram for the onboarding attribute"></svg><div class="gc" id="lA"></div></div>
+      <div><div class="gh">fulfillment</div><svg id="mB" viewBox="0 0 230 188" role="img" aria-label="Kano diagram for the fulfillment attribute"></svg><div class="gc" id="lB"></div></div>
     </div>
     <div class="takeaway" id="takeaway"></div>
   </div>
@@ -119,7 +119,7 @@
     document.getElementById('lB').textContent=NAME[st.B.cat];
     var t;
     if(st.B.cat==='M'&&st.A.cat!=='M'){
-      t='Same you, four honest answers, two different curves. For SymLabs, the signing moment is the one you’d never think to praise, and the one whose absence cuts deepest. The convenience you can take or leave. You just ranked the pains, and the critical one was the quiet one.';
+      t='Same you, four honest answers, two different curves. For SymLabs, fulfillment is the one you’d never think to praise, and the one whose absence cuts deepest. The onboarding convenience you can take or leave. You just ranked the pains, and the critical one was the quiet one.';
     } else {
       t='Same you, four honest answers. The two curves aren’t the same shape, so the two pains don’t carry the same weight. The customer’s own answers rank them, not SymLabs’ hunch.';
     }
